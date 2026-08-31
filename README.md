@@ -45,4 +45,3 @@ spark-submit src/iot_window_metrics.py \
 ## Origin
 
 Rebuilt from MSBA Spark Streaming labs as a portfolio-ready implementation. Course solution exports are not included.
-

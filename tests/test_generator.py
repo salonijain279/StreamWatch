@@ -20,4 +20,3 @@ def test_writer_uses_final_batch_names(tmp_path: Path) -> None:
     source.write_text("one\ntwo\nthree\n")
     assert write_batches(source, output, batch_size=2, delay=0) == 3
     assert [path.name for path in sorted(output.iterdir())] == ["batch_0001.txt", "batch_0002.txt"]
-
