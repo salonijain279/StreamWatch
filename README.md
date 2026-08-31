@@ -1,16 +1,16 @@
 # Real-Time Analytics with Spark Structured Streaming
 
-A portable streaming casebook that moves from controlled micro-batch generation to two real-time analytics patterns: text signals and time-windowed IoT activity.
+I rebuilt two Big Data streaming exercises as portable projects: a text-signal monitor and a time-windowed IoT event monitor. My goal was to make the streaming mechanics visible—how data arrives, how state is bounded, and how a job can recover safely.
 
-## Streaming projects
+## What I built
 
 ### Review signal monitor
 
-Simulates incoming customer-review files, tokenizes each micro-batch, and maintains continuously updated word counts. The generator writes files atomically so Spark never reads a partial batch.
+I simulated incoming customer-review files, tokenized each micro-batch, and maintained continuously updated word counts. I wrote files atomically so Spark never reads a partial batch.
 
 ### IoT event monitor
 
-Consumes timestamped JSON events, applies a watermark, and calculates open/close event counts in configurable time windows. The output supports operational monitoring without retaining an unbounded state table.
+I processed timestamped JSON events, applied a watermark, and calculated open/close event counts in configurable time windows. This let me practice operational monitoring without retaining an unbounded state table.
 
 ## Architecture
 
