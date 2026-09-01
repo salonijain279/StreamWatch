@@ -1,16 +1,16 @@
 # Real-Time Analytics with Spark Structured Streaming
 
-I rebuilt two Big Data streaming exercises as portable projects: a text-signal monitor and a time-windowed IoT event monitor. My goal was to make the streaming mechanics visible—how data arrives, how state is bounded, and how a job can recover safely.
+This repository contains two portable Spark Structured Streaming pipelines: a text-signal monitor and a time-windowed IoT event monitor. Both implementations make ingestion, state management, checkpointing, and recovery behavior explicit.
 
 ## What I built
 
 ### Review signal monitor
 
-I simulated incoming customer-review files, tokenized each micro-batch, and maintained continuously updated word counts. I wrote files atomically so Spark never reads a partial batch.
+The pipeline simulates incoming customer-review files, tokenizes each micro-batch, and maintains continuously updated word counts. Atomic file writes prevent Spark from reading a partial batch.
 
 ### IoT event monitor
 
-I processed timestamped JSON events, applied a watermark, and calculated open/close event counts in configurable time windows. This let me practice operational monitoring without retaining an unbounded state table.
+The pipeline processes timestamped JSON events, applies a watermark, and calculates open/close event counts in configurable time windows without retaining an unbounded state table.
 
 ## Architecture
 
@@ -41,7 +41,3 @@ spark-submit src/iot_window_metrics.py \
 - Checkpoints are explicit and never committed.
 - Event-time aggregation uses watermarks to bound late-data state.
 - Sample fixtures are synthetic and intentionally small; production data belongs in cloud/object storage.
-
-## Origin
-
-Rebuilt from MSBA Spark Streaming labs as a portfolio-ready implementation. Course solution exports are not included.
