@@ -14,8 +14,12 @@ The pipeline processes timestamped JSON events, applies a watermark, and calcula
 
 ## Architecture
 
-```text
-source records -> atomic micro-batches -> Structured Streaming -> watermark/window -> console or Parquet sink
+```mermaid
+flowchart LR
+    A[Source records] --> B[Atomic micro-batches]
+    B --> C[Structured Streaming]
+    C --> D[Watermark / windowing]
+    D --> E[Console or Parquet sink]
 ```
 
 ## Run
