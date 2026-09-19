@@ -1,4 +1,4 @@
-# Spark Structured Streaming Pipelines
+# StreamWatch: Spark Structured Streaming Pipelines
 
 Two portable Spark Structured Streaming pipelines: a text-signal monitor and a time-windowed IoT event monitor. Both implementations make ingestion, state management, checkpointing, and recovery behavior explicit.
 
