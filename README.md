@@ -1,6 +1,6 @@
-# Real-Time Analytics with Spark Structured Streaming
+# Spark Structured Streaming Pipelines
 
-This repository contains two portable Spark Structured Streaming pipelines: a text-signal monitor and a time-windowed IoT event monitor. Both implementations make ingestion, state management, checkpointing, and recovery behavior explicit.
+Two portable Spark Structured Streaming pipelines: a text-signal monitor and a time-windowed IoT event monitor. Both implementations make ingestion, state management, checkpointing, and recovery behavior explicit.
 
 ## Approach
 
